@@ -82,7 +82,7 @@
 - [VideoCoT](https://github.com/Video-CoT/VideoCoT)
 - [ViperGPT](https://github.com/StanfordVL/ViperGPT)
 - [DeepSeekMath](https://github.com/deepseek-ai/DeepSeek-Math)
-
+- [COT-Prompting](https://www.promptingguide.ai/techniques/cot)
 ---
 
 ## 5. 🗂️ 项目文件结构
