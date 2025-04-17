@@ -125,6 +125,7 @@ MLLM-Reasoning-Enhancement-Guide/
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/github/all-contributors/Jeffjeno/MLLM-Reasoning-Enhancement-Guide?color=ffc107)](#contributors)
+
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 ## Contributors ✨
