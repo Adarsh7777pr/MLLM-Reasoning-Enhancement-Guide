@@ -123,6 +123,25 @@ MLLM-Reasoning-Enhancement-Guide/
 - 欢迎提交 PR、Issue，参与资料补充、格式优化、代码贡献
 - 计划接入 `all-contributors` 自动贡献人展示，敬请期待 ✨
 
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/github/all-contributors/<OWNER>/<REPO>?color=ffc107)](#contributors)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
+
+## Contributors ✨
+
+感谢这些杰出的贡献者（👋 Emoji表示贡献类型）:
+
+<table><tr>
+  <td align="center">
+    <a href="https://github.com/Jeffjeno">
+      <img src="https://avatars.githubusercontent.com/Jeffjeno?v=4" width="100px;" alt="Jeffjeno"/>
+      <br /><sub><b>Jeffjeno</b></sub>
+    </a>
+    <br />💻 📖
+  </td>
+</tr></table>
+
+
 ---
 
 > 参考项目：Embodied-AI-Guide, Awesome-Multimodal-LLM, GRPO, LangChain, LLaVA 等
