@@ -182,4 +182,4 @@ MLLM-Reasoning-Enhancement-Guide/
 ## ⭐ Star History
 
 
-[![Star History Chart](https://api.star-history.com/svg?repos=Jeffjeno/MLLM-Reasoning-Enhancement-Guide&type=Date)](https://www.star-history.com/#Jeffjeno/MLLM-Reasoning-Enhancement-Guide&Date)
+[![Star History Chart](https://api.star-history.com/svg?repos=Jeffjeno/MLLM-Reasoning-Enhancement-Guide&type=Timeline)](https://www.star-history.com/#Jeffjeno/MLLM-Reasoning-Enhancement-Guide&Timeline)
