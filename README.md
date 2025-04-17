@@ -131,16 +131,47 @@ MLLM-Reasoning-Enhancement-Guide/
 
 感谢这些杰出的贡献者（👋 Emoji表示贡献类型）:
 
-<table><tr>
-  <td align="center">
-    <a href="https://github.com/Jeffjeno">
-      <img src="https://avatars.githubusercontent.com/Jeffjeno?v=4" width="100px;" alt="Jeffjeno"/>
-      <br /><sub><b>Jeffjeno</b></sub>
-    </a>
-    <br />💻 📖
-  </td>
-</tr></table>
-
+<!-- prettier-ignore-start -->
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/Jeffjeno">
+        <img src="https://avatars.githubusercontent.com/Jeffjeno?v=4" width="100px;" alt="Jeffjeno"/>
+        <br /><sub><b>Jeffjeno</b></sub>
+      </a>
+      <br />💻 📖
+    </td>
+    <td align="center">
+      <a href="https://github.com/Dcx-swjtu">
+        <img src="https://avatars.githubusercontent.com/u/199071563?v=4" width="100px;" alt="Dcx-swjtu"/>
+        <br /><sub><b>Dcx-swjtu</b></sub>
+      </a>
+      <br />🛠️
+    </td>
+    <td align="center">
+      <a href="https://github.com/tower567">
+        <img src="https://avatars.githubusercontent.com/u/151821673?v=4" width="100px;" alt="tower567"/>
+        <br /><sub><b>tower567</b></sub>
+      </a>
+      <br />📖 🤔
+    </td>
+    <td align="center">
+      <a href="https://github.com/Ynimi">
+        <img src="https://avatars.githubusercontent.com/u/183828395?v=4" width="100px;" alt="Ynimi"/>
+        <br /><sub><b>Ynimi</b></sub>
+      </a>
+      <br />📖 🤔
+    </td>
+    <td align="center">
+      <a href="https://github.com/Shoemaker112">
+        <img src="https://avatars.githubusercontent.com/u/187404473?v=4" width="100px;" alt="Shoemaker112"/>
+        <br /><sub><b>Shoemaker112</b></sub>
+      </a>
+      <br />💻 📖
+    </td>
+  </tr>
+</table>
+<!-- prettier-ignore-end -->
 
 ---
 
