@@ -1,11 +1,26 @@
 {
-    "projectName": "MLLM-Reasoning-Enhancement-Guide",
-    "projectOwner": "Jeffjeno",
-    "repoType": "github",
-    "repoHost": "https://github.com",
-    "files": ["README.md"],
-    "imageSize": 100,
-    "commit": true,
-    "contributors": []
-  }
-  
+  "projectName": "MLLM-Reasoning-Enhancement-Guide",
+  "projectOwner": "Jeffjeno",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "contributors": [
+    {
+      "login": "Jeffjeno",
+      "name": "Wang Zhi Zhou",
+      "avatar_url": "https://avatars.githubusercontent.com/u/138852353?v=4",
+      "profile": "https://github.com/Jeffjeno",
+      "contributions": [
+        "doc",
+        "infra"
+      ]
+    }
+  ],
+  "commitType": "docs",
+  "commitConvention": "angular",
+  "contributorsPerLine": 7
+}
