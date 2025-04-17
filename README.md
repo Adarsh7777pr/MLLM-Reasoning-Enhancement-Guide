@@ -1,64 +1,79 @@
 # 🧠 MLLM Reasoning Enhancement Guide 多模态大模型推理增强指南
 
-这是一个持续更新的知识型仓库，参考 `Awesome-*` 系列的设计风格，旨在系统梳理与收录当前用于提升 **多模态大语言模型（Multimodal Large Language Models, MLLMs）** 推理能力的核心方法、数据集、工具、教程与开源项目。
-
-> ✨ 本项目强调“方法整合 + 资源组织 + 实践引导”，为研究者与开发者提供逻辑推理增强在 MLLM 场景中的系统化导航。
-
----
-
-## 📦 项目结构与模块设计
-
-本仓库按模块组织内容，推荐通过跳转查阅：
-
-- 📄 [resources/papers.md](resources/papers.md)：经典论文、技术路线与方法分类整理
-- 📊 [resources/benchmarks.md](resources/benchmarks.md)：推理相关的公开评测与指标
-- 🧰 [resources/tools.md](resources/tools.md)：推理增强工具包、逻辑链构造器等
-- 📦 [resources/datasets.md](resources/datasets.md)：多模态推理训练与评测数据集
-- 📘 [tutorials/GRPO_training.md](tutorials/GRPO_training.md)：GRPO 强化学习推理训练教程
-- 📘 [tutorials/symbolic_reasoning.md](tutorials/symbolic_reasoning.md)：神经-符号融合方法概述
-- 🧪 [examples/](examples/)：典型项目复现路径与增强技术代码链接
+[![Stars](https://img.shields.io/github/stars/Jeffjeno/MLLM-Reasoning-Enhancement-Guide?style=social)](https://github.com/Jeffjeno/MLLM-Reasoning-Enhancement-Guide/stargazers)
+[![Issues](https://img.shields.io/github/issues/Jeffjeno/MLLM-Reasoning-Enhancement-Guide)](https://github.com/Jeffjeno/MLLM-Reasoning-Enhancement-Guide/issues)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/Jeffjeno/MLLM-Reasoning-Enhancement-Guide/pulls)
+[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
 ---
 
-## 🔍 内容覆盖范围
+## 📘 项目简介
 
-- 🔧 推理增强的典型技术路径（Auto-CoT、ReAct、GRPO 等）
-- 📚 多模态 CoT / 神经符号融合 / 路由控制机制方法横向比较
-- 🧠 训练方案：指令微调（SFT）、RLHF、RLAIF、拒绝采样
-- 🧪 推理相关数据集与 benchmark 指标全景汇总
-- 🔗 工程落地：LLaVA / MiniGPT / GRPO / ReAct / ViperGPT 等项目结构分析
+本项目旨在提供一个系统性的多模态大模型（MLLM）推理增强方法指南，涵盖方法综述、核心论文、工具使用、数据资源和教程笔记，帮助研究者和开发者全面理解和掌握 MLLM 的推理能力提升路径。
+
+> ✨ 参考自 Embodied-AI-Guide、Awesome-Multimodal-LLM、LangChain 等项目构建风格，结合实用性与系统性。
 
 ---
 
-## 🧩 推理增强方法概览
+## 🗂️ 内容索引（Contents）
+
+1. [快速导航入口](#1-快速导航入口)
+2. [适用人群与使用建议](#2-适用人群与使用建议)
+3. [代表方法与分类](#3-代表方法与分类)
+4. [推荐阅读与项目实践](#4-推荐阅读与项目实践)
+5. [项目文件结构](#5-项目文件结构)
+6. [路线图与发展方向](#6-路线图与发展方向)
+7. [参与贡献](#7-参与贡献)
+
+---
+
+## 1. 🚀 快速导航入口
+
+- 📄 [resources/papers.md](resources/papers.md)：核心论文与技术路径分类
+- 📊 [resources/benchmarks.md](resources/benchmarks.md)：主流推理评估指标与任务
+- 📦 [resources/datasets.md](resources/datasets.md)：推理相关训练数据集（含视觉、语言、视频等）
+- 🧰 [resources/tools.md](resources/tools.md)：辅助工具如 ReAct、Prover9、提示构造器等
+- 📘 [tutorials/](tutorials/)：GRPO / CoT / 神经符号融合等技术的教程解析
+- 🧪 [examples/](examples/)：可复现项目、增强路径代码
+- 🛣️ [ROADMAP.md](ROADMAP.md)：发展阶段计划与模块任务清单
+
+---
+
+## 2. 🧠 适用人群与使用建议
+
+- 🧑‍🔬 **研究者**：可从 `resources/` 阅读论文、数据、基准，快速了解研究现状
+- 🧑‍💻 **开发者**：聚焦 `examples/` 和 `tutorials/` 模块，获取实用工具与强化路径
+- 🧑‍🎓 **学生学习者**：建议阅读 CoT / GRPO / Symbolic Reasoning 教程，结合 benchmark 理解全流程
+
+---
+
+## 3. 🔧 代表方法与分类
 
 | 类别 | 技术代表 | 简述 |
 |------|------------|------|
-| 数据增强 | Auto-CoT, Self-Instruct | 自动生成推理链路样本，提升泛化能力 |
-| 强化训练 | GRPO, RLAIF | 通过逻辑一致性反馈优化多轮推理轨迹 |
-| 神经符号融合 | PAL, NeuroSymbolic Learners | 外接规则/程序支持复杂推理任务 |
-| 模块化结构 | Dynamic Routing, MoE | 基于任务/输入动态调用子模块 |
-| 逻辑输出优化 | Rejection Sampling, TruthfulQA | 过滤不一致/无因果回答，提升鲁棒性 |
+| 数据增强 | Auto-CoT, Self-Instruct | 自动生成推理链样本，提升泛化能力 |
+| 强化训练 | GRPO, RLAIF | 利用逻辑奖励信号优化多轮推理路径 |
+| 神经符号融合 | PAL, NS-Concept Learners | 外接程序与逻辑工具辅助长链式推理 |
+| 模块路由 | Dynamic Routing, MoE | 输入驱动动态调用模块提升效率 |
+| 输出优化 | Rejection Sampling, TruthfulQA | 逻辑一致性与可信度输出提升机制 |
 
 ---
 
-## 📄 代表论文与开源项目
+## 4. 📄 推荐阅读与项目实践
 
-详见 [`resources/papers.md`](resources/papers.md)，部分代表内容如下：
+### 4.1 🔬 核心论文（详见 [`resources/papers.md`](resources/papers.md)）
 
-### 🔬 核心论文
+- Chain-of-Thought Prompting – Wei et al., 2022  
+- Self-Instruct – Wang et al., 2022  
+- ReAct – Yao et al., 2022  
+- GRPO – Gao et al., 2023  
+- PAL – Gao et al., 2022  
+- DeepSeekMath – DeepSeek-AI, 2024  
+- VideoCoT – Luo et al., 2023  
+- ViperGPT – Surís et al., 2023  
+- NS-Concept Learner – Mao et al., 2019
 
-- **Chain-of-Thought Prompting** – Wei et al., 2022
-- **Self-Instruct** – Wang et al., 2022
-- **ReAct** – Yao et al., 2022
-- **GRPO** – Gao et al., 2023
-- **PAL** – Gao et al., 2022
-- **DeepSeekMath** – DeepSeek-AI, 2024
-- **VideoCoT** – Luo et al., 2023
-- **ViperGPT** – Surís et al., 2023
-- **NS-Concept Learner** – Mao et al., 2019
-
-### 🔧 开源项目
+### 4.2 🔧 开源项目
 
 - [LLaVA](https://github.com/haotian-liu/LLaVA)
 - [MiniGPT-4](https://github.com/Vision-CAIR/MiniGPT-4)
@@ -70,51 +85,46 @@
 
 ---
 
-## 📌 推荐使用方式
-
-该项目作为“研究 & 实践导航指南”推荐如下使用方式：
-
-1. 通过 `resources/` 获取系统资料与对比综述
-2. 阅读 `tutorials/` 了解具体方法原理与流程
-3. 参考 `examples/` 跟踪代码与实践项目
-4. 根据 `roadmap.md` 提建议、开 issue 或参与共建
-
----
-
-## 🗂️ 项目文件结构
+## 5. 🗂️ 项目文件结构
 
 ```
 MLLM-Reasoning-Enhancement-Guide/
-├── README.md                # 项目总览
-├── roadmap.md               # 更新计划
-├── resources/               # 核心资料汇总
+├── README.md
+├── ROADMAP.md
+├── resources/
 │   ├── papers.md
 │   ├── datasets.md
 │   ├── benchmarks.md
 │   └── tools.md
-├── tutorials/               # 方法解释与流程笔记
+├── tutorials/
 │   ├── symbolic_reasoning.md
 │   ├── GRPO_training.md
-│   └── visual_reasoning.md
-├── examples/                # 复现链接与实践指导
+│   ├── cot_prompting.md
+│   └── evaluation_metrics.md
+├── examples/
 │   ├── rejection_sampling/
 │   ├── logic_data_gen/
 │   └── LoRA_finetune/
-└── figures/                 # 示意图与结构流程图
+└── figures/
 ```
 
 ---
 
-## 📬 联系与参与
+## 6. 🛣️ 路线图与发展方向
 
-- Maintainer: Jeffjeno
-- Email: jenojeff66@gmail.com
-- 欢迎提交 PR / Issue，一起完善多模态推理生态
-
+详见 [`ROADMAP.md`](ROADMAP.md)，涵盖四个阶段：内容建设 → 教程搭建 → 实践拓展 → 社区协作。
 
 ---
 
-> 参考项目：`Awesome-Multimodal-LLM`, `ReAct`, `MiniGPT-4`, `LLaVA`, `GRPO`, `LangChain`, `HuggingFace Blog` 等
+## 7. 🤝 参与贡献
+
+- Maintainer: Jeffjeno  
+- Email: jenojeff66@gmail.com
+- 欢迎提交 PR、Issue，参与资料补充、格式优化、代码贡献
+- 计划接入 `all-contributors` 自动贡献人展示，敬请期待 ✨
+
+---
+
+> 参考项目：Embodied-AI-Guide, Awesome-Multimodal-LLM, GRPO, LangChain, LLaVA 等
 
 🧠 **Together, let’s reason better with multimodal LLMs.**
-
