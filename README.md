@@ -128,3 +128,7 @@ MLLM-Reasoning-Enhancement-Guide/
 > 参考项目：Embodied-AI-Guide, Awesome-Multimodal-LLM, GRPO, LangChain, LLaVA 等
 
 🧠 **Together, let’s reason better with multimodal LLMs.**
+
+## ⭐ Star History
+
+[![Star History Chart](https://api.star-history.com/svg?repos=Jeffjeno/MLLM-Reasoning-Enhancement-Guide&type=Date)](https://star-history.com/#Jeffjeno/MLLM-Reasoning-Enhancement-Guide&Date)
