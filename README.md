@@ -160,7 +160,7 @@ MLLM-Reasoning-Enhancement-Guide/
         <img src="https://avatars.githubusercontent.com/u/183828395?v=4" width="100px;" alt="Ynimi"/>
         <br /><sub><b>Ynimi</b></sub>
       </a>
-      <br />📖 🤔
+      <br />🤔 ⭐
     </td>
     <td align="center">
       <a href="https://github.com/Shoemaker112">
