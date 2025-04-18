@@ -36,6 +36,7 @@
 - 📘 [tutorials/](tutorials/)：GRPO / CoT / 神经符号融合等技术的教程解析
 - 🧪 [examples/](examples/)：可复现项目、增强路径代码
 - 🛣️ [ROADMAP.md](ROADMAP.md)：发展阶段计划与模块任务清单
+- [tutorials/pipeline.md] 一个简要的学习训练的pipeline的tutorials
 
 ---
 
