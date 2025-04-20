@@ -27,6 +27,8 @@ for batch in dataset:
 
 **推荐资源：**预训练阶段的经典论文包括Transformer架构提出的“Attention is All You Need”【48†】、GPT系列论文和OpenAI的GPT-3论文，以及Meta的LLaMA技术报告等。这些资料详细介绍了大模型预训练所需的数据规模、模型超参数以及训练技巧，对于理解预训练原理非常有帮助。
 
+可以从 https://bbycroft.net/llm 这个可视化网站理解transformer的架构
+
 **阶段衔接**: 预训练完成后，我们得到一个“基础模型”（Base LM），具备丰富的语言知识。然而此时模型只是通过下一个词预测任务训练，对人类意图尚未对齐，往往不能很好地遵循指令或进行安全对话。因此需要进行后续的指令微调和对齐训练，使模型输出更符合用户期望。
 
 # 2. 指令微调（SFT: Supervised Fine-Tuning）
