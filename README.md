@@ -36,7 +36,7 @@
 - 📘 [tutorials/](tutorials/)：GRPO / CoT / 神经符号融合等技术的教程解析
 - 🧪 [examples/](examples/)：可复现项目、增强路径代码
 - 🛣️ [ROADMAP.md](ROADMAP.md)：发展阶段计划与模块任务清单
-- [tutorials/pipeline.md] 一个简要的学习训练的pipeline的tutorials
+- [tutorials/pipeline.md](tutorials/pipeline.md) 一个简要的学习训练的pipeline的tutorials
 
 ---
 
@@ -84,6 +84,7 @@
 - [ViperGPT](https://github.com/StanfordVL/ViperGPT)
 - [DeepSeekMath](https://github.com/deepseek-ai/DeepSeek-Math)
 - [COT-Prompting](https://www.promptingguide.ai/techniques/cot)
+- [LLMs知识及面试题](https://github.com/wdndev/llm_interview_note)
 ---
 
 ## 5. 🗂️ 项目文件结构
