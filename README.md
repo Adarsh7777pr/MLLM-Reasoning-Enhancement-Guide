@@ -85,6 +85,7 @@
 - [DeepSeekMath](https://github.com/deepseek-ai/DeepSeek-Math)
 - [COT-Prompting](https://www.promptingguide.ai/techniques/cot)
 - [LLMs知识及面试题](https://github.com/wdndev/llm_interview_note)
+- [一个低资源下包括推理模型的从零开始的LLM构建项目:MiniMind](https://github.com/jingyaogong/minimind) 
 ---
 
 ## 5. 🗂️ 项目文件结构
