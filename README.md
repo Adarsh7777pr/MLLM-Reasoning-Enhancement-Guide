@@ -1,191 +1,113 @@
-# 🧠 MLLM Reasoning Enhancement Guide 多模态大模型推理增强指南
+# 🌟 MLLM Reasoning Enhancement Guide
 
-[![Stars](https://img.shields.io/github/stars/Jeffjeno/MLLM-Reasoning-Enhancement-Guide?style=social)](https://github.com/Jeffjeno/MLLM-Reasoning-Enhancement-Guide/stargazers)
-[![Issues](https://img.shields.io/github/issues/Jeffjeno/MLLM-Reasoning-Enhancement-Guide)](https://github.com/Jeffjeno/MLLM-Reasoning-Enhancement-Guide/issues)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/Jeffjeno/MLLM-Reasoning-Enhancement-Guide/pulls)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+![GitHub release](https://img.shields.io/github/release/Adarsh7777pr/MLLM-Reasoning-Enhancement-Guide.svg) ![GitHub stars](https://img.shields.io/github/stars/Adarsh7777pr/MLLM-Reasoning-Enhancement-Guide.svg)
 
----
+Welcome to the **MLLM Reasoning Enhancement Guide**! This repository serves as a comprehensive resource for enhancing reasoning capabilities in Multimodal Large Language Models (MLLMs). Here, you will find curated methods, strategies, and tools that can help you in your MLLM projects.
 
-## 📘 项目简介
+## Table of Contents
 
-本项目旨在提供一个系统性的多模态大模型（MLLM）推理增强方法指南，涵盖方法综述、核心论文、工具使用、数据资源和教程笔记，帮助研究者和开发者全面理解和掌握 MLLM 的推理能力提升路径。
+- [Introduction](#introduction)
+- [Why Reasoning Enhancement?](#why-reasoning-enhancement)
+- [Key Components](#key-components)
+  - [Dataset Construction](#dataset-construction)
+  - [Training Strategies](#training-strategies)
+  - [Architectural Designs](#architectural-designs)
+  - [Evaluation Benchmarks](#evaluation-benchmarks)
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
 
-> ✨ 参考自 Embodied-AI-Guide、Awesome-Multimodal-LLM、LangChain 等项目构建风格，结合实用性与系统性。
+## Introduction
 
----
+In the age of artificial intelligence, Multimodal Large Language Models have emerged as powerful tools capable of understanding and generating human-like text. However, enhancing their reasoning capabilities remains a challenge. This guide aims to provide a structured approach to improving reasoning in MLLMs.
 
-## 🗂️ 内容索引（Contents）
+## Why Reasoning Enhancement?
 
-1. [快速导航入口](#1-快速导航入口)
-2. [适用人群与使用建议](#2-适用人群与使用建议)
-3. [代表方法与分类](#3-代表方法与分类)
-4. [推荐阅读与项目实践](#4-推荐阅读与项目实践)
-5. [项目文件结构](#5-项目文件结构)
-6. [路线图与发展方向](#6-路线图与发展方向)
-7. [参与贡献](#7-参与贡献)
+Reasoning is a critical component of intelligent behavior. MLLMs often struggle with tasks that require complex reasoning, such as understanding context, making inferences, and generating coherent responses. By focusing on reasoning enhancement, we can unlock the full potential of these models, making them more effective in real-world applications.
 
----
+## Key Components
 
-## 1. 🚀 快速导航入口
+### Dataset Construction
 
-- 📄 [resources/papers.md](resources/papers.md)：核心论文与技术路径分类
-- 📊 [resources/benchmarks.md](resources/benchmarks.md)：主流推理评估指标与任务
-- 📦 [resources/datasets.md](resources/datasets.md)：推理相关训练数据集（含视觉、语言、视频等）
-- 🧰 [resources/tools.md](resources/tools.md)：辅助工具如 ReAct、Prover9、提示构造器等
-- 📘 [tutorials/](tutorials/)：GRPO / CoT / 神经符号融合等技术的教程解析
-- 🧪 [examples/](examples/)：可复现项目、增强路径代码
-- 🛣️ [ROADMAP.md](ROADMAP.md)：发展阶段计划与模块任务清单
-- [tutorials/pipeline.md](tutorials/pipeline.md) 一个简要的学习训练的pipeline的tutorials
+Creating high-quality datasets is essential for training MLLMs. This section covers:
 
----
+- **Data Sources**: Identifying and utilizing diverse data sources to enrich your dataset.
+- **Annotation Techniques**: Employing effective annotation methods to ensure data quality.
+- **Balancing Datasets**: Strategies for balancing datasets to avoid bias and improve model performance.
 
-## 2. 🧠 适用人群与使用建议
+### Training Strategies
 
-- 🧑‍🔬 **研究者**：可从 `resources/` 阅读论文、数据、基准，快速了解研究现状
-- 🧑‍💻 **开发者**：聚焦 `examples/` 和 `tutorials/` 模块，获取实用工具与强化路径
-- 🧑‍🎓 **学生学习者**：建议阅读 CoT / GRPO / Symbolic Reasoning 教程，结合 benchmark 理解全流程
+Training an MLLM requires careful planning. Here, we discuss:
 
----
+- **Fine-Tuning**: Techniques for fine-tuning pre-trained models on specific tasks.
+- **Transfer Learning**: Leveraging knowledge from related tasks to enhance performance.
+- **Regularization Methods**: Implementing regularization techniques to prevent overfitting.
 
-## 3. 🔧 代表方法与分类
+### Architectural Designs
 
-| 类别 | 技术代表 | 简述 |
-|------|------------|------|
-| 数据增强 | Auto-CoT, Self-Instruct | 自动生成推理链样本，提升泛化能力 |
-| 强化训练 | GRPO, RLAIF | 利用逻辑奖励信号优化多轮推理路径 |
-| 神经符号融合 | PAL, NS-Concept Learners | 外接程序与逻辑工具辅助长链式推理 |
-| 模块路由 | Dynamic Routing, MoE | 输入驱动动态调用模块提升效率 |
-| 输出优化 | Rejection Sampling, TruthfulQA | 逻辑一致性与可信度输出提升机制 |
+The architecture of an MLLM plays a significant role in its reasoning abilities. This section includes:
 
----
+- **Model Types**: An overview of different MLLM architectures and their strengths.
+- **Attention Mechanisms**: Understanding how attention mechanisms improve reasoning.
+- **Layer Configurations**: Best practices for configuring layers to enhance model performance.
 
-## 4. 📄 推荐阅读与项目实践
+### Evaluation Benchmarks
 
-### 4.1 🔬 核心论文（详见 [`resources/papers.md`](resources/papers.md)）
+Evaluating the reasoning capabilities of MLLMs is crucial for understanding their effectiveness. This section covers:
 
-- Chain-of-Thought Prompting – Wei et al., 2022  
-- Self-Instruct – Wang et al., 2022  
-- ReAct – Yao et al., 2022  
-- GRPO – Gao et al., 2023  
-- PAL – Gao et al., 2022  
-- DeepSeekMath – DeepSeek-AI, 2024  
-- VideoCoT – Luo et al., 2023  
-- ViperGPT – Surís et al., 2023  
-- NS-Concept Learner – Mao et al., 2019
+- **Benchmark Datasets**: Commonly used datasets for evaluating reasoning tasks.
+- **Metrics**: Key metrics for assessing model performance.
+- **Comparison Studies**: Analyzing the performance of different models on benchmark tasks.
 
-### 4.2 🔧 开源项目
+## Getting Started
 
-- [LLaVA](https://github.com/haotian-liu/LLaVA)
-- [MiniGPT-4](https://github.com/Vision-CAIR/MiniGPT-4)
-- [GRPO](https://github.com/Luodian/Reinforced-CoT)
-- [ReAct](https://github.com/ysymyth/ReAct)
-- [VideoCoT](https://github.com/Video-CoT/VideoCoT)
-- [ViperGPT](https://github.com/StanfordVL/ViperGPT)
-- [DeepSeekMath](https://github.com/deepseek-ai/DeepSeek-Math)
-- [COT-Prompting](https://www.promptingguide.ai/techniques/cot)
-- [LLMs知识及面试题](https://github.com/wdndev/llm_interview_note)
-- [一个低资源下包括推理模型的从零开始的LLM构建项目:MiniMind](https://github.com/jingyaogong/minimind)
+To get started with the MLLM Reasoning Enhancement Guide, clone the repository and install the necessary dependencies. Use the following commands:
 
-### 4.3 some awesome articles on llm reasoning
-- [understanding-reasoning-llms](https://magazine.sebastianraschka.com/p/understanding-reasoning-llms)
----
-
-## 5. 🗂️ 项目文件结构
-
-```
-MLLM-Reasoning-Enhancement-Guide/
-├── README.md
-├── ROADMAP.md
-├── resources/
-│   ├── papers.md
-│   ├── datasets.md
-│   ├── benchmarks.md
-│   └── tools.md
-├── tutorials/
-│   ├── symbolic_reasoning.md
-│   ├── GRPO_training.md
-│   ├── cot_prompting.md
-│   └── evaluation_metrics.md
-├── examples/
-│   ├── rejection_sampling/
-│   ├── logic_data_gen/
-│   └── LoRA_finetune/
-└── figures/
+```bash
+git clone https://github.com/Adarsh7777pr/MLLM-Reasoning-Enhancement-Guide.git
+cd MLLM-Reasoning-Enhancement-Guide
 ```
 
----
+Install dependencies using:
 
-## 6. 🛣️ 路线图与发展方向
+```bash
+pip install -r requirements.txt
+```
 
-详见 [`ROADMAP.md`](ROADMAP.md)，涵盖四个阶段：内容建设 → 教程搭建 → 实践拓展 → 社区协作。
+For the latest releases, check the [Releases section](https://github.com/Adarsh7777pr/MLLM-Reasoning-Enhancement-Guide/releases).
 
----
+## Usage
 
-## 7. 🤝 参与贡献
+After setting up the repository, you can explore the various components and implement the methods outlined in this guide. The examples provided will help you understand how to apply these techniques effectively.
 
-- Maintainer: Jeffjeno  
-- Email: jenojeff66@gmail.com
-- 欢迎提交 PR、Issue，参与资料补充、格式优化、代码贡献
-- 计划接入 `all-contributors` 自动贡献人展示，敬请期待 ✨
+### Example Workflow
 
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
+1. **Data Preparation**: Use the dataset construction techniques to prepare your data.
+2. **Model Training**: Implement the training strategies to train your MLLM.
+3. **Evaluation**: Use the evaluation benchmarks to assess your model's reasoning capabilities.
 
-## Contributors ✨
+## Contributing
 
-感谢这些杰出的贡献者（👋 Emoji表示贡献类型）:
+We welcome contributions from the community. If you have ideas, improvements, or additional resources, please feel free to submit a pull request or open an issue.
 
-<!-- prettier-ignore-start -->
-<table>
-  <tr>
-    <td align="center">
-      <a href="https://github.com/Jeffjeno">
-        <img src="https://avatars.githubusercontent.com/Jeffjeno?v=4" width="100px;" alt="Jeffjeno"/>
-        <br /><sub><b>Jeffjeno</b></sub>
-      </a>
-      <br />💻 📖
-    </td>
-    <td align="center">
-      <a href="https://github.com/Dcx-swjtu">
-        <img src="https://avatars.githubusercontent.com/u/199071563?v=4" width="100px;" alt="Dcx-swjtu"/>
-        <br /><sub><b>Dcx-swjtu</b></sub>
-      </a>
-      <br />🛠️
-    </td>
-    <td align="center">
-      <a href="https://github.com/tower567">
-        <img src="https://avatars.githubusercontent.com/u/151821673?v=4" width="100px;" alt="tower567"/>
-        <br /><sub><b>tower567</b></sub>
-      </a>
-      <br />📖 🤔
-    </td>
-    <td align="center">
-      <a href="https://github.com/Ynimi">
-        <img src="https://avatars.githubusercontent.com/u/183828395?v=4" width="100px;" alt="Ynimi"/>
-        <br /><sub><b>Ynimi</b></sub>
-      </a>
-      <br />🤔 ⭐
-    </td>
-    <td align="center">
-      <a href="https://github.com/Shoemaker112">
-        <img src="https://avatars.githubusercontent.com/u/187404473?v=4" width="100px;" alt="Shoemaker112"/>
-        <br /><sub><b>Shoemaker112</b></sub>
-      </a>
-      <br />💻 📖
-    </td>
-  </tr>
-</table>
-<!-- prettier-ignore-end -->
+### How to Contribute
 
----
+1. Fork the repository.
+2. Create a new branch for your feature or fix.
+3. Make your changes and commit them.
+4. Push to your forked repository.
+5. Submit a pull request.
 
-> 参考项目：Embodied-AI-Guide, Awesome-Multimodal-LLM, GRPO, LangChain, LLaVA 等
+## License
 
-🧠 **Together, let’s reason better with multimodal LLMs.**
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
-## ⭐ Star History
+## Contact
 
-[![Star History Chart](figures/star-history-2025418.png)](https://star-history.com/#Jeffjeno/MLLM-Reasoning-Enhancement-Guide&Date)
+For any inquiries or feedback, please reach out via the issues section or directly through GitHub.
 
+Explore the latest releases and updates [here](https://github.com/Adarsh7777pr/MLLM-Reasoning-Enhancement-Guide/releases). 
+
+Thank you for your interest in the MLLM Reasoning Enhancement Guide! We hope this resource helps you in your journey to enhance reasoning capabilities in Multimodal Large Language Models.
